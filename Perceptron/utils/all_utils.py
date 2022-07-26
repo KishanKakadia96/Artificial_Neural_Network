@@ -14,7 +14,7 @@ def prepare_data(df):
     return X, y
 def save_model(model,filename):
     # save the model to disk
-    filename = 'ANN_AND_model.sav'
+    filename = 'ANN_OR_model.sav'
     pickle.dump(model, open(filename, 'wb'))
 
  # load the model from disk
@@ -60,6 +60,6 @@ def save_plt(df, file_name, model):
     plot_dir = "plots"
     
     # save the plot fig to disk
-    filename = 'AND_Plot.png'
+    filename = 'OR_Plot.png'
     pickle.dump(model, open(filename, 'wb'))
     plt.savefig(filename)
