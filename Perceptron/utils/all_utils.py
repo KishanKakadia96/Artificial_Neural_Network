@@ -12,15 +12,15 @@ def prepare_data(df):
     
     y= df["y"]
     return X, y
+def save_model(model,filename):
+    # save the model to disk
+    filename = 'ANN_AND_model.sav'
+    pickle.dump(model, open(filename, 'wb'))
 
-# save the model to disk
-filename = 'ANN_AND_model.sav'
-pickle.dump(model_AND, open(filename, 'wb'))
-
-# load the model from disk
-loaded_model = pickle.load(open(filename, 'rb'))
-result = loaded_model.predict(X)
-print(result)
+ # load the model from disk
+# loaded_model = pickle.load(open(filename, 'rb'))
+# result = loaded_model.predict(X)
+# print(result)
 
 def save_plt(df, file_name, model):
     def _create_base_plot(df):
@@ -60,6 +60,6 @@ def save_plt(df, file_name, model):
     plot_dir = "plots"
     
     # save the plot fig to disk
-    filename = 'XOR_Plot.png'
+    filename = 'AND_Plot.png'
     pickle.dump(model, open(filename, 'wb'))
     plt.savefig(filename)
